@@ -2,6 +2,15 @@
 
 Provider: OpenAI `gpt-4o-mini` + `text-embedding-3-small` · LangSmith project: `day22-tranxuanduc`
 
+## Trace công khai trên LangSmith
+
+Xem được không cần đăng nhập. Cả 2 trace trả lời câu hỏi *"What are common AI safety concerns with LLMs?"*:
+
+| Bước | Trace | Nội dung xem được |
+|---|---|---|
+| 1 — RAG + tracing | [`rag-query`](https://smith.langchain.com/public/26d5739b-734c-40a1-b53c-1a74310256cc/r/01a119b7-d62f-7d22-87e5-543f1b008f86?start_time=2026-10-08T04%3A14%3A00.75112Z) | Cây run: VectorStoreRetriever (3 chunk) → format_docs → ChatPromptTemplate → gpt-4o-mini → StrOutputParser |
+| 2 — A/B routing | [`ab-rag-query`](https://smith.langchain.com/public/adef92ca-f9e0-4f44-a2df-daa5cb762045/r/01a119c1-50e0-7581-b1e0-0aa13e6072b8?start_time=2026-10-08T04%3A24%3A21.98461Z) | Request `req-0049` được route sang **v2**; output có trường `version` |
+
 ## Danh sách tệp
 
 | Tệp | Nội dung |
